@@ -10,6 +10,10 @@ import com.example.rickandmortyapiflow.paging.RickMortyPaginSource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+/*Pager : Essa API consome o que o RemoteMediator ou PagingSource retorna como uma
+fonte de dados para ele e retorna um fluxo reativo de PagingData . Ele pode ser retornado
+como Flow, Observable, LiveData, conforme mostrado no diagrama acima.*/
+
 @HiltViewModel
 class RickMortyViewModel @Inject constructor(private val apiService: ApiService) : ViewModel() {
 

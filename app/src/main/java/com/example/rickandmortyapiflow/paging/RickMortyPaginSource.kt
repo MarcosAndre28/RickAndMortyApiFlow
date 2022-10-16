@@ -5,6 +5,10 @@ import androidx.paging.PagingState
 import com.example.rickandmortyapiflow.api.ApiService
 import com.example.rickandmortyapiflow.model.RickMorty
 
+/*PagingSource : É uma classe abstrata genérica que é responsável por carregar os dados de paginação da rede.
+Para implementar PagingSource precisamos definir o tipo Page Key no nosso caso será do tipo Int e o tipo de
+dados de resposta da API no nosso caso será RickMorty.*/
+
 class RickMortyPaginSource(private val apiService: ApiService) : PagingSource<Int, RickMorty>() {
     override fun getRefreshKey(state: PagingState<Int, RickMorty>): Int? {
         return null

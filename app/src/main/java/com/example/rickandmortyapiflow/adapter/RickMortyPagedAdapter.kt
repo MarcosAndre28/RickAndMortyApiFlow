@@ -10,6 +10,15 @@ import com.example.rickandmortyapiflow.adapter.RickMortyPagedAdapter.*
 import com.example.rickandmortyapiflow.databinding.RickMortyLayoutBinding
 import com.example.rickandmortyapiflow.model.RickMorty
 
+/*PagingDataAdapter : Este é o principal componente de interface do usuário responsável por
+apresentar os dados no RecyclerView. Ele consome o PagingData como o tipo de entrada e escuta
+seus eventos de carregamento internos. Ele carrega dados após granulação fina usando DiffUtil
+em um thread em segundo plano, portanto, não espere soluços ao adicionar novos itens no thread
+da interface do usuário.*/
+
+/*DiffUtil: Essa classe encontra a diferença entre duas listas e fornece a lista atualizada como
+saída. Essa classe é usada para notificar atualizações para um Adaptador RecyclerView.*/
+
 class RickMortyPagedAdapter : PagingDataAdapter<RickMorty, MyViewHolder>(diffCallback) {
 
     inner class MyViewHolder(val binding: RickMortyLayoutBinding) :
@@ -30,14 +39,14 @@ class RickMortyPagedAdapter : PagingDataAdapter<RickMorty, MyViewHolder>(diffCal
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = getItem(position)
 
-        // this method getItem() is from PagingDataAdapter
+        // O método getItem() é do PagingDataAdapter
 
         holder.binding.apply {
             textView.text = "${currentItem?.name}"
             val imageLink = currentItem?.image
 
-            // here I'm using coroutine image loader(coil) to display images
-            // but you can also use glide if you can
+            // Aqui estou usando coroutine image loader(coil) para exibir imagens
+            // vc pode usar o  glide
             imageView.load(imageLink) {
                 crossfade(true)
                 crossfade(1000)
