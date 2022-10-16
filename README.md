@@ -1,6 +1,13 @@
 # RickAndMortyApiFlow
 # Android Architecture: Paggin 3, MVVM, Flow, Retrofit2, Dagger-Hilt
 
+# App RickAndMortyApiFlow
+<div align="justify">
+
+[The Rick and Morty API](https://rickandmortyapi.com/)<br></p>
+![img_1.png](img_1.png)
+</div>
+
 # Bom uma breve introdução de tudo que foi usado no projeto (Todo esse resumo foi tira de artigos que deixo sempre no final de cada resumo)
 
 ## O que é a biblioteca de paginação (Paging 3)
