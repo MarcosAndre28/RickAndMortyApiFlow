@@ -235,3 +235,4 @@ object AuditModule {
 
  Saiba mais sobre [DaggerHilt](https://medium.com/android-dev-br/hilt-series-introdu%C3%A7%C3%A3o-ao-dagger-hilt-50faa1b3a194)
  </div>
+ 
